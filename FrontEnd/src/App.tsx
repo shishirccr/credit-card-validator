@@ -49,6 +49,11 @@ export const CreditCardForm = () => {
           <p>Please provide a valid credit card number.</p>
         </div>
       )}
+      {validCreditCard !== undefined && validCreditCard && (
+          <div className="card-success">
+            <p>Provided credit card number is valid.</p>
+          </div>
+      )}
       <div className="form-container">
         <div className="field-container">
           <label
@@ -61,7 +66,7 @@ export const CreditCardForm = () => {
             id="cardNumber"
             type="number"
             inputMode="numeric"
-            {...register("cardNumber", { required: true, minLength: {value: 13, message: "Credit Card should not be less than 13 digits"}, maxLength: {value: 4, message: "Credit Card should not exceed 19 digits"} })}
+            {...register("cardNumber", { required: true, minLength: {value: 13, message: "Credit Card should not be less than 13 digits"}, maxLength: {value: 19, message: "Credit Card should not exceed 19 digits"} })}
           />
           {errors.cardNumber?.message && <label className={classNames({ fieldError: errors.cardNumber })}>
             {errors.cardNumber?.message}

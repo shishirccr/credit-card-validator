@@ -75,6 +75,13 @@ input {
   background-color: #ffd8d8;
 }
 
+.card-success {
+  padding-left: 15px;
+  border-radius: 5px;
+  border: 1px solid green;
+  background-color: darkseagreen;
+}
+
 .fieldError {
   color: red;
 }
